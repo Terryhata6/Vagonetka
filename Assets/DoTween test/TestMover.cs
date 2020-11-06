@@ -29,7 +29,7 @@ public class TestMover : MonoBehaviour
         }
         if (_isRotate)
         {
-            Rotate(Angles.Angle90, Directions.Left);
+            Rotate(1f, 90f);
         }
     }
 
@@ -38,43 +38,49 @@ public class TestMover : MonoBehaviour
         _player.transform.Translate(Vector3.forward * Time.deltaTime * _speed);
     }
 
-    private void Rotate(Angles angle, Directions direction)
+    private void Rotate(float direction, float angle)
     {
-        if (direction == Directions.Right) _direction = 1f;
-        else if (direction == Directions.Left) _direction = -1f;
-
         _currentYAngle = _player.transform.rotation.eulerAngles.y;
 
-        _player.transform.Rotate(Vector3.up * Time.deltaTime * (_speedRotate * _direction));
+        _player.transform.Rotate(Vector3.up * Time.deltaTime * (_speedRotate * direction));
 
+        if (direction == 1)
+        {
+            if (_currentYAngle - _startYAngle >= angle)
+            {
+                _isRotate = false;
+                _startYAngle += angle * direction;
+                _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
+            }
+            else if (_currentYAngle >= 359f && _currentYAngle <= 359.9f)
+            {
+                _isRotate = false;
+                _startYAngle = 0f;
+                _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
+            }
+        }
 
+        if (direction == -1)
+        {
+            if (_startYAngle == 0)
+            {
+                _startYAngle = 360;
+                _currentYAngle = 360;
+            }
+
+            if (_startYAngle - _currentYAngle >= angle)
+            {
+                _isRotate = false;
+                _startYAngle += angle * direction;
+                _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
+            }
+            else if (_currentYAngle >= 0.1f && _currentYAngle <= 1f)
+            {
+                _isRotate = false;
+                _startYAngle = 0f;
+                _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
+                _currentYAngle = 0f;
+            }
+        }
     }
-
-    //private void Rotate(float direction, float angle)
-    //{
-    //    _currentYAngle = _player.transform.rotation.eulerAngles.y;
-
-    //    _player.transform.Rotate(Vector3.up * Time.deltaTime * (_speedRotate * direction));
-
-    //    if (direction == 1)
-    //    {
-    //        if (_currentYAngle - _startYAngle >= angle * direction)
-    //        {
-    //            _isRotate = false;
-    //            _startYAngle += angle * direction;
-    //            _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
-    //        }
-    //        else if (_currentYAngle >= 359f && _currentYAngle <= 359.9f)
-    //        {
-    //            _isRotate = false;
-    //            _startYAngle = 0f;
-    //            _player.transform.rotation = Quaternion.Euler(_player.transform.rotation.eulerAngles.x, _startYAngle, _player.transform.rotation.eulerAngles.z);
-    //        }
-    //    }
-        
-    //    if (direction == -1)
-    //    {
-
-    //    }
-    //}
 }
