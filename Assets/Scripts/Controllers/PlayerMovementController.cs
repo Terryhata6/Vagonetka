@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-
 namespace Vagonetka
 {
     public class PlayerMovementController : MonoBehaviour
     {
         [Header("Player speed")]
         [SerializeField] private float _speed;
-
-        [SerializeField] private float _rotateSpeed;
+        
+        private float _rotateSpeed;
         private float _startYAngle;
         private float _currentYAngle;
 

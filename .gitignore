@@ -58,3 +58,133 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Art/straight.obj
+Assets/Art/straight.obj.meta
+Assets/Art/turn.obj
+Assets/PathCreator.meta
+Assets/PathCreator/Core.meta
+Assets/PathCreator/Core/Editor.meta
+Assets/PathCreator/Core/Editor/Helper.meta
+Assets/PathCreator/Core/Editor/Helper/MouseUtility.cs
+Assets/PathCreator/Core/Editor/Helper/MouseUtility.cs.meta
+Assets/PathCreator/Core/Editor/Helper/PathHandle.cs
+Assets/PathCreator/Core/Editor/Helper/PathHandle.cs.meta
+Assets/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs
+Assets/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs.meta
+Assets/PathCreator/Core/Editor/PathCreatorEditor.asmdef
+Assets/PathCreator/Core/Editor/PathCreatorEditor.asmdef.meta
+Assets/PathCreator/Core/Editor/PathEditor.cs
+Assets/PathCreator/Core/Editor/PathEditor.cs.meta
+Assets/PathCreator/Core/Runtime.meta
+Assets/PathCreator/Core/Runtime/Objects.meta
+Assets/PathCreator/Core/Runtime/Objects/BezierPath.cs
+Assets/PathCreator/Core/Runtime/Objects/BezierPath.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/EndOfPathInstruction.cs
+Assets/PathCreator/Core/Runtime/Objects/EndOfPathInstruction.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/GlobalDisplaySettings.cs
+Assets/PathCreator/Core/Runtime/Objects/GlobalDisplaySettings.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/MinMax3D.cs
+Assets/PathCreator/Core/Runtime/Objects/MinMax3D.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/PathCreator.cs
+Assets/PathCreator/Core/Runtime/Objects/PathCreator.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/PathCreatorData.cs
+Assets/PathCreator/Core/Runtime/Objects/PathCreatorData.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/PathSpace.cs
+Assets/PathCreator/Core/Runtime/Objects/PathSpace.cs.meta
+Assets/PathCreator/Core/Runtime/Objects/VertexPath.cs
+Assets/PathCreator/Core/Runtime/Objects/VertexPath.cs.meta
+Assets/PathCreator/Core/Runtime/PathCreator.asmdef
+Assets/PathCreator/Core/Runtime/PathCreator.asmdef.meta
+Assets/PathCreator/Core/Runtime/Utility.meta
+Assets/PathCreator/Core/Runtime/Utility/CubicBezierUtility.cs
+Assets/PathCreator/Core/Runtime/Utility/CubicBezierUtility.cs.meta
+Assets/PathCreator/Core/Runtime/Utility/MathUtility.cs
+Assets/PathCreator/Core/Runtime/Utility/MathUtility.cs.meta
+Assets/PathCreator/Core/Runtime/Utility/VertexPathUtility.cs
+Assets/PathCreator/Core/Runtime/Utility/VertexPathUtility.cs.meta
+Assets/PathCreator/Core/Settings.meta
+Assets/PathCreator/Core/Settings/GlobalDisplaySettings.asset
+Assets/PathCreator/Core/Settings/GlobalDisplaySettings.asset.meta
+Assets/PathCreator/Documentation.meta
+Assets/PathCreator/Documentation/Documentation.pdf
+Assets/PathCreator/Documentation/Documentation.pdf.meta
+Assets/PathCreator/Examples.meta
+Assets/PathCreator/Examples/Materials.meta
+Assets/PathCreator/Examples/Materials/Black.mat
+Assets/PathCreator/Examples/Materials/Black.mat.meta
+Assets/PathCreator/Examples/Materials/Blue.mat
+Assets/PathCreator/Examples/Materials/Blue.mat.meta
+Assets/PathCreator/Examples/Materials/Brown.mat
+Assets/PathCreator/Examples/Materials/Brown.mat.meta
+Assets/PathCreator/Examples/Materials/Dark Grey.mat
+Assets/PathCreator/Examples/Materials/Dark Grey.mat.meta
+Assets/PathCreator/Examples/Materials/Green.mat
+Assets/PathCreator/Examples/Materials/Green.mat.meta
+Assets/PathCreator/Examples/Materials/Rail Texture.png
+Assets/PathCreator/Examples/Materials/Rail Texture.png.meta
+Assets/PathCreator/Examples/Materials/Red.mat
+Assets/PathCreator/Examples/Materials/Red.mat.meta
+Assets/PathCreator/Examples/Materials/Road Texture.png
+Assets/PathCreator/Examples/Materials/Road Texture.png.meta
+Assets/PathCreator/Examples/Materials/Road Underside.mat
+Assets/PathCreator/Examples/Materials/Road Underside.mat.meta
+Assets/PathCreator/Examples/Materials/Road.mat
+Assets/PathCreator/Examples/Materials/Road.mat.meta
+Assets/PathCreator/Examples/Prefabs.meta
+Assets/PathCreator/Examples/Prefabs/Cube.prefab
+Assets/PathCreator/Examples/Prefabs/Cube.prefab.meta
+Assets/PathCreator/Examples/Prefabs/Follower.prefab
+Assets/PathCreator/Examples/Prefabs/Follower.prefab.meta
+Assets/PathCreator/Examples/Prefabs/Path.prefab
+Assets/PathCreator/Examples/Prefabs/Path.prefab.meta
+Assets/PathCreator/Examples/Prefabs/Sphere.prefab
+Assets/PathCreator/Examples/Prefabs/Sphere.prefab.meta
+Assets/PathCreator/Examples/Scenes.meta
+Assets/PathCreator/Examples/Scenes/Follow Path.unity
+Assets/PathCreator/Examples/Scenes/Follow Path.unity.meta
+Assets/PathCreator/Examples/Scenes/Generate Path.unity
+Assets/PathCreator/Examples/Scenes/Generate Path.unity.meta
+Assets/PathCreator/Examples/Scenes/Object Placement.unity
+Assets/PathCreator/Examples/Scenes/Object Placement.unity.meta
+Assets/PathCreator/Examples/Scenes/Path as Prefab.unity
+Assets/PathCreator/Examples/Scenes/Path as Prefab.unity.meta
+Assets/PathCreator/Examples/Scenes/Road.unity
+Assets/PathCreator/Examples/Scenes/Road.unity.meta
+Assets/PathCreator/Examples/Scripts.meta
+Assets/PathCreator/Examples/Scripts/Editor.meta
+Assets/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs
+Assets/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs.meta
+Assets/PathCreator/Examples/Scripts/GeneratePathExample.cs
+Assets/PathCreator/Examples/Scripts/GeneratePathExample.cs.meta
+Assets/PathCreator/Examples/Scripts/PathFollower.cs
+Assets/PathCreator/Examples/Scripts/PathFollower.cs.meta
+Assets/PathCreator/Examples/Scripts/PathPlacer.cs
+Assets/PathCreator/Examples/Scripts/PathPlacer.cs.meta
+Assets/PathCreator/Examples/Scripts/PathSceneTool.cs
+Assets/PathCreator/Examples/Scripts/PathSceneTool.cs.meta
+Assets/PathCreator/Examples/Scripts/PathSpawner.cs
+Assets/PathCreator/Examples/Scripts/PathSpawner.cs.meta
+Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs
+Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs.meta
+Assets/Prefabs/long.prefab
+Assets/Prefabs/long_turn_l_4.prefab
+Assets/Prefabs/straight.prefab
+Assets/Prefabs/straight.prefab.meta
+Assets/Prefabs/turn.prefab
+Assets/Prefabs/turn.prefab.meta
+Assets/Resources.meta
+Assets/Resources/Player.prefab
+Assets/Resources/Player.prefab.meta
+Assets/Resources/Track1.prefab
+Assets/Resources/Track1.prefab.meta
+Assets/Resources/Track2.prefab
+Assets/Resources/Track2.prefab.meta
+Assets/Resources/Track3.prefab
+Assets/Resources/Track3.prefab.meta
+Assets/Scenes/GeneratePathViaWaypoints.unity
+Assets/Scenes/SampleScene.unity
+Assets/Scripts.meta
+Assets/Scripts/FollowPoint.cs
+Assets/Scripts/FollowPoint.cs.meta
+Assets/Scripts/Spawner.cs
+Assets/Scripts/Spawner.cs.meta
