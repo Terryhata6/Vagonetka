@@ -6,20 +6,25 @@ namespace Vagonetka
     public class GoldModel : MonoBehaviour
     {
         private Rigidbody _rigidbody;
+        private bool _isActive;
 
 
         private void OnCollisionEnter(Collision collision)
         {
             //TODO
+            Destroy(gameObject);
         }
 
         public void Activate()
         {
-            _rigidbody = GetComponent<Rigidbody>();
-            _rigidbody.isKinematic = true;
+            if (!_isActive)
+            {
+                _rigidbody = GetComponent<Rigidbody>();
+                _rigidbody.isKinematic = true;
+                _isActive = true;
+            }
 
             //TODO визуальное свечение золота
-            //TODO активация слитка для Input
         }
 
         public void Fall()

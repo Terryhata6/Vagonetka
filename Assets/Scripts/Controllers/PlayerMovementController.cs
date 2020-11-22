@@ -6,7 +6,8 @@ namespace Vagonetka
     {
         [Header("Player speed")]
         [SerializeField] private float _speed;
-        [SerializeField] private float _rotateSpeed;
+        
+        private float _rotateSpeed;
         private float _startYAngle;
         private float _currentYAngle;
 

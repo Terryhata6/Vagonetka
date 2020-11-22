@@ -6,8 +6,11 @@ namespace Vagonetka
 {
     public class GoldController : MonoBehaviour
     {
+        [SerializeField] private float _activateDistance;
+
+        private ListOfGoldModel _listOfGold;
         private List<GoldModel> _goldList;
-        private GoldModel _gold;
+        private GoldModel _currentGold;
         private PlayerModel _player;
         private int _index = 0;
 
@@ -16,44 +19,48 @@ namespace Vagonetka
         private float _goldX;
         private float _goldZ;
 
+        private bool _isActive;
+
         private void Start()
         {
             _player = FindObjectOfType<PlayerModel>();
-            _gold = _goldList[_index];
+            _goldList = new List<GoldModel>();
+            _listOfGold = FindObjectOfType<ListOfGoldModel>();
+
+
         }
 
         private void Update()
         {
-            if (ComparePosition())
+            if (_isActive)
+            {
+                ComparePosition();
+            }
+        }
+
+        private void ComparePosition()
+        {
+            _playerX = _player.gameObject.transform.position.x;
+            _playerZ = _player.gameObject.transform.position.z;
+            _goldX = _currentGold.gameObject.transform.position.x;
+            _goldZ = _currentGold.gameObject.transform.position.z;
+
+            if (Mathf.Abs(_goldX - _playerX) <= _activateDistance || Mathf.Abs(_goldZ - _playerZ) <= _activateDistance)
+            {
+                _currentGold.Activate();
+            }
+            if (Mathf.Abs(_goldX - _playerX) <= 10f && Mathf.Abs(_goldZ - _playerZ) <= 10f)
             {
                 SwitchNextGold();
             }
         }
 
-        private bool ComparePosition()
+        public void UpdateGoldList()
         {
-            _playerX = _player.gameObject.transform.position.x;
-            _playerZ = _player.gameObject.transform.position.z;
-            _goldX = _gold.gameObject.transform.position.x;
-            _goldZ = _gold.gameObject.transform.position.z;
-
-            if (_goldX >= _playerX - 1f && _goldX <= _playerX + 1f && _goldZ >= _playerZ + 1f && _goldX <= _playerZ - 1f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void UpdateGoldList(List<GoldPresetModel> presetList)
-        {
+            _index = 0;
             _goldList.Clear();
-            for (int i = 0; i < presetList.Count; i++)
-            {
-                _goldList.AddRange(presetList[i].GetGold());
-            }
+            _goldList = _listOfGold.GetListOfGold();
+            _currentGold = _goldList[_index];
         }
 
         public void SwitchNextGold()
@@ -61,8 +68,18 @@ namespace Vagonetka
             _index++;
             if (_index < _goldList.Count)
             {
-                _gold = _goldList[_index];
+                _currentGold = _goldList[_index];
             }
+        }
+
+        public GoldModel GetCurrentGold()
+        {
+            return _currentGold;
+        }
+
+        public void ActivateController(bool condition)
+        {
+            _isActive = condition;
         }
     }
 }

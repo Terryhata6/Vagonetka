@@ -8,5 +8,9 @@ namespace Vagonetka
     public class SceneCreator : ScriptableObject
     {
         [ReorderableList] public LevelPartPreset[] LevelPartsArray;
+
+        [Header("Gates (start & end of level)")]
+        public LevelGatePreset StartGate;
+        public LevelGatePreset EndGate;
     }
 }

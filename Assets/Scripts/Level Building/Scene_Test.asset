@@ -16,3 +16,6 @@ MonoBehaviour:
   - {fileID: 4539052107423576124, guid: 037f996f65adc3f41a436e4a0a818cf7, type: 3}
   - {fileID: 4539052107423576124, guid: 037f996f65adc3f41a436e4a0a818cf7, type: 3}
   - {fileID: 4539052107423576124, guid: 037f996f65adc3f41a436e4a0a818cf7, type: 3}
+  StartGate: {fileID: 4001351877794565998, guid: 75a64eae7dc83394c8dc7dfcc551ee18,
+    type: 3}
+  EndGate: {fileID: 4001351877794565998, guid: 75a64eae7dc83394c8dc7dfcc551ee18, type: 3}
