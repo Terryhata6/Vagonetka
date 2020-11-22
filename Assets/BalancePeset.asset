@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23f374439301324fb95e85c48b5fd39, type: 3}
+  m_Name: BalancePeset
+  m_EditorClassIdentifier: 
+  _LVLSettings:
+  - MinLvl: 1
+    MaxLvl: 5
+    LevelSettings:
+      CartSpeed: 5
+      MaxAmountOfMissedNuggets: 10
+  - MinLvl: 6
+    MaxLvl: 10
+    LevelSettings:
+      CartSpeed: 6
+      MaxAmountOfMissedNuggets: 8
+  - MinLvl: 0
+    MaxLvl: 0
+    LevelSettings:
+      CartSpeed: 0
+      MaxAmountOfMissedNuggets: 0
+  - MinLvl: 0
+    MaxLvl: 0
+    LevelSettings:
+      CartSpeed: 0
+      MaxAmountOfMissedNuggets: 0
+  - MinLvl: 0
+    MaxLvl: 0
+    LevelSettings:
+      CartSpeed: 0
+      MaxAmountOfMissedNuggets: 0
