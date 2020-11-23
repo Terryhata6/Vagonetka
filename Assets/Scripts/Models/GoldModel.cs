@@ -6,13 +6,23 @@ namespace Vagonetka
     public class GoldModel : MonoBehaviour
     {
         private Rigidbody _rigidbody;
+        private GoldCollector _goldCollector;
         private bool _isActive;
 
 
         private void OnCollisionEnter(Collision collision)
         {
             //TODO
-            Destroy(gameObject);
+            //Destroy(gameObject);
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            _goldCollector = other.gameObject.GetComponent<GoldCollector>();
+            if(_goldCollector != null)
+            {
+                _goldCollector.AddGold();
+                _goldCollector.PlaceGold(this.gameObject);
+            }
         }
 
         public void Activate()

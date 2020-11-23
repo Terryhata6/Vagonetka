@@ -6,6 +6,6 @@ namespace Vagonetka
     public class SingleLvl
     {
         public float CartSpeed;
-        public int MaxAmountOfMissedNuggets;
+        public int MaxAmountOfMissedGold;
     }
 }

@@ -11,6 +11,7 @@ namespace Vagonetka
         private ListOfGoldModel _listOfGold;
         private List<GoldModel> _goldList;
         private GoldModel _currentGold;
+        private GoldCollector _goldCollector;
         private PlayerModel _player;
         private int _index = 0;
 
@@ -26,7 +27,7 @@ namespace Vagonetka
             _player = FindObjectOfType<PlayerModel>();
             _goldList = new List<GoldModel>();
             _listOfGold = FindObjectOfType<ListOfGoldModel>();
-
+            _goldCollector = FindObjectOfType<GoldCollector>();
 
         }
 
@@ -60,6 +61,7 @@ namespace Vagonetka
             _index = 0;
             _goldList.Clear();
             _goldList = _listOfGold.GetListOfGold();
+            _goldCollector.UpdateGoldNums(_goldList.Count);
             _currentGold = _goldList[_index];
         }
 
