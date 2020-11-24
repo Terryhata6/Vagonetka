@@ -8,6 +8,7 @@ namespace Vagonetka
         private Rigidbody _rigidbody;
         private GoldCollector _goldCollector;
         private bool _isActive;
+        private bool _isCollected;
 
 
         private void OnCollisionEnter(Collision collision)
@@ -18,10 +19,11 @@ namespace Vagonetka
         private void OnTriggerEnter(Collider other)
         {
             _goldCollector = other.gameObject.GetComponent<GoldCollector>();
-            if(_goldCollector != null)
+            if(_goldCollector != null && !_isCollected)
             {
+                _isCollected = true;
                 _goldCollector.AddGold();
-                _goldCollector.PlaceGold(this.gameObject);
+                _goldCollector.PlaceGold(this.transform, this);
             }
         }
 
@@ -40,6 +42,14 @@ namespace Vagonetka
         public void Fall()
         {
             _rigidbody.isKinematic = false;
+        }
+        public void StopFalling(float time) 
+        {
+            Invoke("SetKinematic", time);
+        }
+        private void SetKinematic()
+        {
+            _rigidbody.isKinematic = true;
         }
 
         public void Deactivate()

@@ -2,12 +2,12 @@
 using System;
 using UnityEngine;
 
-
 namespace Vagonetka
 {
 	public class GoldCollector : MonoBehaviour
 	{
-		private BalanceModel _balanceModel;
+		private BalanceController _balanceModel;
+		private List<Transform> _goldTransformList;
 		[SerializeField] private int _goldCollected;
 		[SerializeField] private int _minAmountOfGold;
 		[SerializeField] private int _maxAmountOfGold;
@@ -15,7 +15,8 @@ namespace Vagonetka
 
 		private void Start()
 		{ 
-			_balanceModel = FindObjectOfType<BalanceModel>();
+			_balanceModel = FindObjectOfType<BalanceController>();
+			_goldTransformList = new List<Transform>();
 		}
 		public void AddGold()
 		{
@@ -29,8 +30,9 @@ namespace Vagonetka
 		{
 			_maxAmountOfGold = AmountOfGoldOnScene; 
 			EnoughOfGoldCollected = false;
-			_goldCollected = 0;
 			_minAmountOfGold = _maxAmountOfGold - _balanceModel.GetMaxAmountOfMissedGold();
+			_goldCollected = 0;
+			_goldTransformList.Clear();
 		}
 		public bool IsEnoughGoldCollected()
 		{
@@ -43,9 +45,26 @@ namespace Vagonetka
 				return false;
 			}
 		}
-		public void PlaceGold(GameObject GoldIngot)
+		public void PlaceGold(Transform goldIngot , GoldModel goldModel)
 		{
-			Destroy(GoldIngot);
+			goldIngot.parent = transform;
+			_goldTransformList.Add(goldIngot);
+			goldModel.StopFalling(2f);
+		}
+		public void ClearCollector()
+		{
+			for (int i = 0; i < _goldTransformList.Count; i++)
+			{
+				Destroy(_goldTransformList[i].gameObject);
+			}
+		}
+		public int GetGoldCollected()
+		{
+			return _goldCollected;
+		}
+		public int GetMinAmountOfGold()
+		{
+			return _minAmountOfGold;
 		}
 	}
 }

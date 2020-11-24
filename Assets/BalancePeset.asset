@@ -17,24 +17,24 @@ MonoBehaviour:
     MaxLvl: 5
     LevelSettings:
       CartSpeed: 5
-      MaxAmountOfMissedNuggets: 10
+      MaxAmountOfMissedGold: 5
   - MinLvl: 6
     MaxLvl: 10
     LevelSettings:
       CartSpeed: 6
-      MaxAmountOfMissedNuggets: 8
+      MaxAmountOfMissedGold: 0
   - MinLvl: 0
     MaxLvl: 0
     LevelSettings:
       CartSpeed: 0
-      MaxAmountOfMissedNuggets: 0
+      MaxAmountOfMissedGold: 0
   - MinLvl: 0
     MaxLvl: 0
     LevelSettings:
       CartSpeed: 0
-      MaxAmountOfMissedNuggets: 0
+      MaxAmountOfMissedGold: 0
   - MinLvl: 0
     MaxLvl: 0
     LevelSettings:
       CartSpeed: 0
-      MaxAmountOfMissedNuggets: 0
+      MaxAmountOfMissedGold: 0

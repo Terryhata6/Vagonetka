@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+
 namespace Vagonetka
 {
-	public class BalanceModel : MonoBehaviour
+	public class BalanceController : MonoBehaviour
 	{
 		public BalancePreset BalancePreset;
 		private int CurrentLvlPreset;

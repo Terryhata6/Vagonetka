@@ -37,6 +37,7 @@ namespace Vagonetka
                 _levelNumber = 0;
                 _builder.BuildScene(_kit[_levelNumber]);
             }
+            _goldController.UpdateGoldList();
         }
 
         private void CleareLevel()
