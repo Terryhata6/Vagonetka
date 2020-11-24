@@ -43,7 +43,6 @@ namespace Vagonetka
                     _listOfGold.AddGold(spawnedLevelParts[i].GetGoldArray());
                 }
             }
-
             endGate.transform.position = spawnedLevelParts[spawnedLevelParts.Count - 1].GetPositionToNext();
         }
     }
