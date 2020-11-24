@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Vagonetka
-{
+{/*
 	[CustomEditor(typeof(RoadPartsSettings))]
 	public class RoadPartsEditor : UnityEditor.Editor
 	{
@@ -20,5 +20,5 @@ namespace Vagonetka
 				testTarget.CreateObj();
 			}
 		}
-	}
+	}*/
 }

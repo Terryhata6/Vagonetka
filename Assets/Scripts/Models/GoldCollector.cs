@@ -1,5 +1,5 @@
-﻿using Boo.Lang;
-using System;
+﻿
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Vagonetka
@@ -13,7 +13,7 @@ namespace Vagonetka
 		[SerializeField] private int _maxAmountOfGold;
 		[SerializeField] private bool EnoughOfGoldCollected;
 
-		private void Start()
+		private void Awake()
 		{ 
 			_balanceModel = FindObjectOfType<BalanceController>();
 			_goldTransformList = new List<Transform>();
