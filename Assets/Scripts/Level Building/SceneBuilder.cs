@@ -6,7 +6,15 @@ namespace Vagonetka
 {
     public class SceneBuilder : MonoBehaviour
     {
+        [SerializeField] private Vector3 _positionForStartGates;
+
         private ListOfGoldModel _listOfGold;
+        private PlayerModel _player;
+
+        private void Start()
+        {
+            _player = FindObjectOfType<PlayerModel>();
+        }
 
         public void BuildScene(SceneCreator sceneKit)
         {
@@ -20,6 +28,8 @@ namespace Vagonetka
             LevelGatePreset startGate = Instantiate(sceneKit.StartGate);
             LevelGatePreset endGate = Instantiate(sceneKit.EndGate);
             List<LevelPartPreset> spawnedLevelParts = new List<LevelPartPreset>();
+
+            _player.transform.position = startGate.GetPlayerStartPoint();
 
             Vector3 firstLevelPartPosition = startGate.GetPositionToNext();
 

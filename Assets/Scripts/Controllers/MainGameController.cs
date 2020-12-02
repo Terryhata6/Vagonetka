@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using NaughtyAttributes;
 
 
 namespace Vagonetka
@@ -14,13 +13,11 @@ namespace Vagonetka
         {
             Physics.gravity = new Vector3(0, _gravity, 0);
             _player = FindObjectOfType<PlayerModel>();
-
-            StartGame();
         }
 
         public void StartGame()
         {
-            _player.IsMoving = true;
+            
         }
 
         public void StartLevel()
@@ -28,6 +25,18 @@ namespace Vagonetka
             //TODO:
             //UI set to in game
             //Player start moving
+        }
+
+        public void IsLevelPassed(bool isPassed)
+        {
+            if (isPassed)
+            {
+                //TODO
+            }
+            else
+            {
+                //TODO
+            }
         }
     }
 }
