@@ -5,10 +5,13 @@ namespace Vagonetka
 {
     public class InputController : MonoBehaviour
     {
+        public bool InputStarted = false;
+
         [SerializeField] private KeyCode _keyForFallGold;
+
         private Camera _сameraForInput;
         private Touch touch;
-        public bool InputStarted = false;
+        private bool _isActive;
 
         private GoldController _goldController;
 
@@ -20,6 +23,7 @@ namespace Vagonetka
 
         private void Update()
         {
+            if (!_isActive) return;
             if (Input.GetKeyDown(_keyForFallGold))
             {
                 _goldController.GetCurrentGold().Fall();
@@ -37,6 +41,11 @@ namespace Vagonetka
             {
                 InputStarted = false;
             }
+        }
+
+        public void ActivateController(bool state)
+        {
+            _isActive = state;
         }
     }
 }

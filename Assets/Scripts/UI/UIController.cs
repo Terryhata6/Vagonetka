@@ -21,11 +21,10 @@ namespace Vagonetka
             _endGameMenu = GetComponentInChildren<EndGameMenu>();
 
             _mainGameController = FindObjectOfType<MainGameController>();
-        }
-
-        private void Start()
-        {
+            
             SwitchUI(UIState.MainMenu);
+            
+            Time.timeScale = 0;
         }
 
         public void SwitchUI(UIState state)
@@ -61,6 +60,8 @@ namespace Vagonetka
 
         public void StartGame()
         {
+            Debug.Log("StartGame");
+            Time.timeScale = 1;
             SwitchUI(UIState.InGame);
             _mainGameController.StartGame();
         }
@@ -69,7 +70,16 @@ namespace Vagonetka
             SwitchUI(UIState.InGame);
             _mainGameController.NextLevel();
         }
-
+        public void PauseGame()
+        {
+            Time.timeScale = 0;
+            SwitchUI(UIState.Pause);
+        }
+        public void ResumeGame()
+        {
+            Time.timeScale = 1;
+            SwitchUI(UIState.InGame);
+        }
         public void EndGame()
         {
             SwitchUI(UIState.EndGame);

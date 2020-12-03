@@ -44,12 +44,14 @@ namespace Vagonetka
                 {
                     spawnedLevelParts[i].transform.position = firstLevelPartPosition;
                     spawnedLevelParts[i].SetGoldPreset();
+                    spawnedLevelParts[i].SetDecorPreset();
                     _listOfGold.AddGold(spawnedLevelParts[i].GetGoldArray());
                 }
                 else
                 {
                     spawnedLevelParts[i].transform.position = spawnedLevelParts[i - 1].GetPositionToNext();
                     spawnedLevelParts[i].SetGoldPreset();
+                    spawnedLevelParts[i].SetDecorPreset();
                     _listOfGold.AddGold(spawnedLevelParts[i].GetGoldArray());
                 }
             }
