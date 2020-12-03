@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using NaughtyAttributes;
 
 
 namespace Vagonetka
@@ -9,25 +8,37 @@ namespace Vagonetka
         [SerializeField] private float _gravity;
 
         private PlayerModel _player;
+        private LevelController _levelController;
 
         private void Start()
         {
             Physics.gravity = new Vector3(0, _gravity, 0);
-            _player = FindObjectOfType<PlayerModel>();
 
-            StartGame();
+            _player = FindObjectOfType<PlayerModel>();
+            _levelController = FindObjectOfType<LevelController>();
         }
 
         public void StartGame()
         {
-            _player.IsMoving = true;
+            //TODO load data
+            _levelController.StartLevel();
+        }
+        public void NextLevel()
+        {
+            //TODO save data (may be level number)
+            _levelController.NextLevel();
         }
 
-        public void StartLevel()
+        public void IsLevelPassed(bool isPassed)
         {
-            //TODO:
-            //UI set to in game
-            //Player start moving
+            if (isPassed)
+            {
+                //TODO
+            }
+            else
+            {
+                //TODO
+            }
         }
     }
 }
