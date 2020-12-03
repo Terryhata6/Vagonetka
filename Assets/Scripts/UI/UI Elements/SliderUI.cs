@@ -8,13 +8,16 @@ namespace Vagonetka
     {
         private Slider _slider;
 
-        public Slider GetControl()
+        public Slider GetControl
         {
-            if (!_slider)
+            get
             {
-                _slider = gameObject.GetComponent<Slider>();
+                if (!_slider)
+                {
+                    _slider = transform.GetComponent<Slider>();
+                }
+                return _slider;
             }
-            return _slider;
         }
     }
 }

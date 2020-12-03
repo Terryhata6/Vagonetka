@@ -8,13 +8,16 @@ namespace Vagonetka
     {
         private Text _text;
 
-        public Text GetControl()
+        public Text GetControl
         {
-            if (!_text)
+            get
             {
-                _text = gameObject.GetComponent<Text>();
+                if (!_text)
+                {
+                    _text = transform.GetComponent<Text>();
+                }
+                return _text;
             }
-            return _text;
         }
     }
 }

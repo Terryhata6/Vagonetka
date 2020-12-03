@@ -8,13 +8,16 @@ namespace Vagonetka
     {
         private Button _button;
 
-        public Button GetControl()
+        public Button GetControl
         {
-            if (!_button)
+            get
             {
-                _button = gameObject.GetComponent<Button>();
+                if (!_button)
+                {
+                    _button = transform.GetComponent<Button>();
+                }
+                return _button;
             }
-            return _button;
         }
     }
 }
