@@ -7,7 +7,8 @@ namespace Vagonetka
     {
         public enum ConnectionType
         {
-            Road
+            Road,
+            Gold
         }
 
         public ConnectionType Type;
@@ -19,10 +20,13 @@ namespace Vagonetka
                 case ConnectionType.Road:
                     Gizmos.color = Color.green;
                     break;
+                case ConnectionType.Gold:
+                    Gizmos.color = Color.yellow;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            Gizmos.color = Color.green;
+            //Gizmos.color = Color.green;
             Gizmos.DrawSphere(transform.position, 1.0f);
         }
     }

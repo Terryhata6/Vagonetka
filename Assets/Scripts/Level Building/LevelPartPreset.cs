@@ -5,6 +5,8 @@ namespace Vagonetka
 {
     public class LevelPartPreset : MonoBehaviour
     {
+        //TODO Включение Декораций из массива декораций 
+
         [Header("Array of gold presets")]
         [SerializeField] private GoldPreset[] _goldPresetArray;
         
