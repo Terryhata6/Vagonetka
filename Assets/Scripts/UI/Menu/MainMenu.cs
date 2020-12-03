@@ -14,10 +14,11 @@ namespace Vagonetka
 
         private void Start()
         {
-            _uiController = GetComponentInParent<UIController>();
+            _uiController = FindObjectOfType<UIController>();
 
             _startGameButton.GetControl.onClick.AddListener(delegate
             {
+                Debug.Log("Tap");
                 _uiController.StartGame();
             });
         }
