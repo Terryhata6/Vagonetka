@@ -62,7 +62,6 @@ namespace Vagonetka
 		public void UpdateGoldList()
 		{
 			_index = 0;
-			//_goldList.Clear(); //этот метод вызывается в SceneBuilder
 			_goldList = _listOfGold.GetListOfGold();
 			_goldCollector.UpdateGoldNums(_goldList.Count);
 			_currentGold = _goldList[_index];

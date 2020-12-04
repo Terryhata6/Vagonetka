@@ -6,7 +6,15 @@ namespace Vagonetka
 {
     public class SceneBuilder : MonoBehaviour
     {
+        [SerializeField] private Vector3 _positionForStartGates;
+
         private ListOfGoldModel _listOfGold;
+        private PlayerModel _player;
+
+        private void Start()
+        {
+            _player = FindObjectOfType<PlayerModel>();
+        }
 
         public void BuildScene(SceneCreator sceneKit)
         {
@@ -21,6 +29,8 @@ namespace Vagonetka
             LevelGatePreset endGate = Instantiate(sceneKit.EndGate);
             List<LevelPartPreset> spawnedLevelParts = new List<LevelPartPreset>();
 
+            _player.transform.position = startGate.GetPlayerStartPoint();
+
             Vector3 firstLevelPartPosition = startGate.GetPositionToNext();
 
             for (int i = 0; i < sceneKit.LevelPartsArray.Length; i++)
@@ -34,12 +44,14 @@ namespace Vagonetka
                 {
                     spawnedLevelParts[i].transform.position = firstLevelPartPosition;
                     spawnedLevelParts[i].SetGoldPreset();
+                    spawnedLevelParts[i].SetDecorPreset();
                     _listOfGold.AddGold(spawnedLevelParts[i].GetGoldArray());
                 }
                 else
                 {
                     spawnedLevelParts[i].transform.position = spawnedLevelParts[i - 1].GetPositionToNext();
                     spawnedLevelParts[i].SetGoldPreset();
+                    spawnedLevelParts[i].SetDecorPreset();
                     _listOfGold.AddGold(spawnedLevelParts[i].GetGoldArray());
                 }
             }
