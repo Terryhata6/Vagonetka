@@ -32,6 +32,13 @@ namespace Vagonetka
 			EnoughOfGoldCollected = false;
 			_minAmountOfGold = _maxAmountOfGold - _balanceModel.GetMaxAmountOfMissedGold();
 			_goldCollected = 0;
+
+			GoldModel[] goldInChildren = GetComponentsInChildren<GoldModel>();
+			foreach(GoldModel gold in goldInChildren)
+            {
+				Destroy(gold.gameObject);
+            }
+
 			_goldTransformList.Clear();
 		}
 		public bool IsEnoughGoldCollected()
