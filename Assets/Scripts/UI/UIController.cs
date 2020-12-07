@@ -11,6 +11,7 @@ namespace Vagonetka
         private EndGameMenu _endGameMenu;
 
         private MainGameController _mainGameController;
+        private InputController _inputController;
 
 
         private void Awake()
@@ -21,6 +22,7 @@ namespace Vagonetka
             _endGameMenu = GetComponentInChildren<EndGameMenu>();
 
             _mainGameController = FindObjectOfType<MainGameController>();
+            _inputController = FindObjectOfType<InputController>();
             
             SwitchUI(UIState.MainMenu);
             
@@ -60,7 +62,6 @@ namespace Vagonetka
 
         public void StartGame()
         {
-            Debug.Log("StartGame");
             Time.timeScale = 1;
             SwitchUI(UIState.InGame);
             _mainGameController.StartGame();
@@ -74,15 +75,23 @@ namespace Vagonetka
         {
             Time.timeScale = 0;
             SwitchUI(UIState.Pause);
+            _inputController.ActivateController(false);
         }
         public void ResumeGame()
         {
             Time.timeScale = 1;
             SwitchUI(UIState.InGame);
+            _inputController.ActivateController(true);
         }
         public void EndGame()
         {
             SwitchUI(UIState.EndGame);
+        }
+        public void ExitGame()
+        {
+            Time.timeScale = 0;
+            SwitchUI(UIState.MainMenu);
+            _inputController.ActivateController(false);
         }
     }
 }
