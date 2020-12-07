@@ -24,10 +24,14 @@ namespace Vagonetka
         private void Update()
         {
             if (!_isActive) return;
+
+            #if UNITY_EDITOR
             if (Input.GetKeyDown(_keyForFallGold))
             {
                 _goldController.GetCurrentGold().Fall();
             }
+            #endif
+
             if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);

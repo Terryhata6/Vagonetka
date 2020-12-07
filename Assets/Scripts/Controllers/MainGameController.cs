@@ -9,6 +9,7 @@ namespace Vagonetka
 
         private PlayerModel _player;
         private LevelController _levelController;
+        private InputController _inputController;
 
         private void Start()
         {
@@ -16,12 +17,14 @@ namespace Vagonetka
 
             _player = FindObjectOfType<PlayerModel>();
             _levelController = FindObjectOfType<LevelController>();
+            _inputController = FindObjectOfType<InputController>();
         }
 
         public void StartGame()
         {
             //TODO load data
             _levelController.StartLevel();
+            _inputController.ActivateController(true);
         }
         public void NextLevel()
         {
