@@ -10,6 +10,7 @@ namespace Vagonetka
         private PlayerModel _player;
         private LevelController _levelController;
         private InputController _inputController;
+        private SaveDataRepo _saveData;
 
         private void Start()
         {
@@ -18,17 +19,21 @@ namespace Vagonetka
             _player = FindObjectOfType<PlayerModel>();
             _levelController = FindObjectOfType<LevelController>();
             _inputController = FindObjectOfType<InputController>();
+
+            _saveData = new SaveDataRepo();
         }
 
         public void StartGame()
         {
-            //TODO load data
+            _levelController.LevelNumber = _saveData.LoadInt(SaveKeyManager.LevelNumber);
+
             _levelController.StartLevel();
             _inputController.ActivateController(true);
         }
         public void NextLevel()
         {
-            //TODO save data (may be level number)
+            _saveData.SaveData(_levelController.LevelNumber, SaveKeyManager.LevelNumber);
+
             _levelController.NextLevel();
         }
 

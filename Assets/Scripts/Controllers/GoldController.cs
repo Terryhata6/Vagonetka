@@ -48,7 +48,7 @@ namespace Vagonetka
 				_goldX = _currentGold.gameObject.transform.position.x;
 				_goldZ = _currentGold.gameObject.transform.position.z;
 
-				if (Mathf.Abs(_goldX - _playerX) <= _activateDistance || Mathf.Abs(_goldZ - _playerZ) <= _activateDistance)
+				if (Vector3.Distance(_currentGold.transform.position, _player.transform.position) <= _activateDistance)
 				{
 					_currentGold.Activate();
 				}
