@@ -11,6 +11,7 @@ namespace Vagonetka
         private LevelController _levelController;
         private InputController _inputController;
         private SaveDataRepo _saveData;
+        private UIController _uiController;
 
         private void Start()
         {
@@ -19,6 +20,7 @@ namespace Vagonetka
             _player = FindObjectOfType<PlayerModel>();
             _levelController = FindObjectOfType<LevelController>();
             _inputController = FindObjectOfType<InputController>();
+            _uiController = FindObjectOfType<UIController>();
 
             _saveData = new SaveDataRepo();
         }
@@ -41,11 +43,11 @@ namespace Vagonetka
         {
             if (isPassed)
             {
-                //TODO
+                _uiController.EndGame(EndGameUIState.Win);
             }
             else
             {
-                //TODO
+                _uiController.EndGame(EndGameUIState.Lose);
             }
         }
     }

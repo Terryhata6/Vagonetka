@@ -86,7 +86,6 @@ namespace Vagonetka
             _player.IsMoving = false;
 
             _mainController.IsLevelPassed(_goldCollector.IsEnoughGoldCollected());
-            _uiController.EndGame();
         }
     }
 }

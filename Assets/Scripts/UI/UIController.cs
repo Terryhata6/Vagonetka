@@ -83,9 +83,10 @@ namespace Vagonetka
             SwitchUI(UIState.InGame);
             _inputController.ActivateController(true);
         }
-        public void EndGame()
+        public void EndGame(EndGameUIState state)
         {
             SwitchUI(UIState.EndGame);
+            _endGameMenu.ActivateMenu(state);
         }
         public void ExitGame()
         {
