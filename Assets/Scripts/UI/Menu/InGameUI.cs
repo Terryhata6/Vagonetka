@@ -7,12 +7,15 @@ namespace Vagonetka
     {
         [Header("Main panel of In Game UI")]
         [SerializeField] private GameObject _mainPanel;
+        [SerializeField] private ButtonUI _buttonPause;
 
         private UIController _uiController;
 
         private void Start()
         {
             _uiController = GetComponentInParent<UIController>();
+
+            _buttonPause.GetControl.onClick.AddListener(() => _uiController.PauseGame());
         }
 
         public override void Hide()

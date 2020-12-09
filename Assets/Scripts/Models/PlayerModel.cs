@@ -17,5 +17,11 @@ namespace Vagonetka
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zCoordinate);
         }
+        public void StartLevel()
+        {
+            IsRotateLeft = false;
+            IsRotateRight = false;
+            IsMoving = true;
+        }
     }
 }

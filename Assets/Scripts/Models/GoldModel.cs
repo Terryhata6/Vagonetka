@@ -41,6 +41,7 @@ namespace Vagonetka
 
         public void Fall()
         {
+            if (!_isActive) return;
             _rigidbody.isKinematic = false;
         }
         public void StopFalling(float time) 

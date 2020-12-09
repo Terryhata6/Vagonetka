@@ -86,5 +86,11 @@ namespace Vagonetka
                 }
             }
         }
+
+        public void Restart()
+        {
+            _startYAngle = 0;
+            _currentYAngle = 0;
+        }
     }
 }

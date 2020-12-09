@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc828204965da7b489f7973aca5388de, type: 3}
   m_Name: Scene_1
   m_EditorClassIdentifier: 
-  LevelPartsArray: []
-  StartGate: {fileID: 0}
-  EndGate: {fileID: 0}
+  LevelPartsArray:
+  - {fileID: 2805806853392718518, guid: 4c729596cc55d51498f8e40de6399657, type: 3}
+  - {fileID: 3188393585995098100, guid: 33c6cace4746fa94089300a5c44308b7, type: 3}
+  - {fileID: 1599310097463020140, guid: 1a0057f2ffef52a41a9bf4d1612ba5f6, type: 3}
+  StartGate: {fileID: 4001351877794565998, guid: 75a64eae7dc83394c8dc7dfcc551ee18,
+    type: 3}
+  EndGate: {fileID: 4001351877794565998, guid: 75a64eae7dc83394c8dc7dfcc551ee18, type: 3}

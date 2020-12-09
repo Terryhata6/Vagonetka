@@ -30,6 +30,7 @@ namespace Vagonetka
             List<LevelPartPreset> spawnedLevelParts = new List<LevelPartPreset>();
 
             _player.transform.position = startGate.GetPlayerStartPoint();
+            _player.transform.rotation = Quaternion.identity;
 
             Vector3 firstLevelPartPosition = startGate.GetPositionToNext();
 

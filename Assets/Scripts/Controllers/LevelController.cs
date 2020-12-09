@@ -12,6 +12,7 @@ namespace Vagonetka
         private GoldController _goldController;
         private GoldCollector _goldCollector;
         private PlayerModel _player;
+        private PlayerMovementController _playerMovement;
         private SceneBuilder _builder;
         private UIController _uiController;
 
@@ -32,6 +33,7 @@ namespace Vagonetka
             _goldController = FindObjectOfType<GoldController>();
             _goldCollector = FindObjectOfType<GoldCollector>();
             _player = FindObjectOfType<PlayerModel>();
+            _playerMovement = FindObjectOfType<PlayerMovementController>();
             _builder = FindObjectOfType<SceneBuilder>();
             _uiController = FindObjectOfType<UIController>();
         }
@@ -69,7 +71,8 @@ namespace Vagonetka
             _goldController.UpdateGoldList();
             _goldController.ActivateController(true);
 
-            _player.IsMoving = true;
+            _player.StartLevel();
+            _playerMovement.Restart();
         }
 
         public void NextLevel()
@@ -83,7 +86,6 @@ namespace Vagonetka
             _player.IsMoving = false;
 
             _mainController.IsLevelPassed(_goldCollector.IsEnoughGoldCollected());
-            _uiController.EndGame();
         }
     }
 }
