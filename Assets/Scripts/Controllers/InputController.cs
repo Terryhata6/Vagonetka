@@ -25,26 +25,32 @@ namespace Vagonetka
         {
             if (!_isActive) return;
 
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             if (Input.GetKeyDown(_keyForFallGold))
             {
-                _goldController.GetCurrentGold().Fall();
+                FallGold();
             }
-            #endif
+#endif
 
             if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
-                    InputStarted = true; 
-                    _goldController.GetCurrentGold().Fall();
+                    InputStarted = true;
+                    FallGold();
                 }
             }
             else if (InputStarted)
             {
                 InputStarted = false;
             }
+        }
+
+        private void FallGold()
+        {
+            _goldController.GetCurrentGold().Fall();
+            _goldController.SwitchNextGold();
         }
 
         public void ActivateController(bool state)

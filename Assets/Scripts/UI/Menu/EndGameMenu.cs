@@ -8,7 +8,8 @@ namespace Vagonetka
         [Header("Main panel of end game menu")]
         [SerializeField] private GameObject _mainPanel;
 
-        //[Header("Objects in case of WIN")]
+        [Header("Objects in case of WIN")]
+        [SerializeField] private ButtonUI _buttonNext;
 
         //[Header("Objects in case of LOSE")]
 
@@ -23,6 +24,7 @@ namespace Vagonetka
             _uiController = GetComponentInParent<UIController>();
 
             _buttonExit.GetControl.onClick.AddListener(() => _uiController.ExitGame());
+            _buttonNext.GetControl.onClick.AddListener(() => _uiController.NextLevel());
         }
 
         public override void Hide()
@@ -49,6 +51,7 @@ namespace Vagonetka
                     break;
                 case EndGameUIState.Lose:
                     //TODO
+                    _buttonNext.gameObject.SetActive(false);
                     _header.GetControl.text = "Loser";
                     break;
             }

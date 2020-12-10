@@ -7193,7 +7193,7 @@ PrefabInstance:
     - target: {fileID: 4078879742363241949, guid: 239a4bfde898c984f8be0325b828a369,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
         type: 3}
@@ -7363,6 +7363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activateDistance: 100
+  _maxDelta: 5
 --- !u!114 &2066622658
 MonoBehaviour:
   m_ObjectHideFlags: 0
