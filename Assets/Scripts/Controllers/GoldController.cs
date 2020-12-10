@@ -7,6 +7,7 @@ namespace Vagonetka
 	public class GoldController : MonoBehaviour
 	{
 		[SerializeField] private float _activateDistance;
+		[SerializeField] private float _maxDelta = 5;
 
 		private ListOfGoldModel _listOfGold;
 		private List<GoldModel> _goldList;
@@ -52,7 +53,7 @@ namespace Vagonetka
 				{
 					_currentGold.Activate();
 				}
-				if (Mathf.Abs(_goldX - _playerX) <= 10f && Mathf.Abs(_goldZ - _playerZ) <= 10f)
+				if (Mathf.Abs(_goldX - _playerX) <= _maxDelta && Mathf.Abs(_goldZ - _playerZ) <= _maxDelta)
 				{
 					SwitchNextGold();
 				}
