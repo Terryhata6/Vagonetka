@@ -6,6 +6,10 @@ namespace Vagonetka
 {
 	public class GoldCollector : MonoBehaviour
 	{
+		public ParticleSystem[] GoldEffectParticles;
+		public Light GoldEffectLight;
+		public float GoldEffectRangeMax;
+
 		private BalanceController _balanceModel;
 		private List<Transform> _goldTransformList;
 		[SerializeField] private int _goldCollected;
@@ -17,14 +21,43 @@ namespace Vagonetka
 		{ 
 			_balanceModel = FindObjectOfType<BalanceController>();
 			_goldTransformList = new List<Transform>();
+			for (int i = 0; i < GoldEffectParticles.Length; i++)
+			{
+				GoldEffectParticles[i].Pause();
+			}
+			GoldEffectLight.range = 0;
 		}
 		public void AddGold()
 		{
 			_goldCollected++;
-			if(_goldCollected >= _minAmountOfGold)
+			for (int i = 0; i < GoldEffectParticles.Length; i++)
+			{
+				GoldEffectParticles[i]. Play();
+			}
+			ActivateLightEffect();
+			if (_goldCollected >= _minAmountOfGold)
 			{
 				EnoughOfGoldCollected = true;
 			}
+		}
+		private void ActivateLightEffect()
+		{
+			for (int i = 0; i < GoldEffectRangeMax; i++)
+			{
+				Invoke("IncreaseLightRange", i * 0.01f);
+			}
+			for (int i = 0; i < GoldEffectRangeMax; i++)
+			{
+				Invoke("DecreaseLightRange", (GoldEffectRangeMax * 0.01f) + i * 0.01f);
+			}
+		}
+		private void IncreaseLightRange()
+		{
+			GoldEffectLight.range++;
+		}
+		private void DecreaseLightRange()
+		{
+			GoldEffectLight.range--;
 		}
 		public void UpdateGoldNums(int AmountOfGoldOnScene)
 		{
@@ -73,5 +106,6 @@ namespace Vagonetka
 		{
 			return _minAmountOfGold;
 		}
+		//private void 
 	}
 }
