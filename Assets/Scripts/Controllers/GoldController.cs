@@ -9,6 +9,9 @@ namespace Vagonetka
 		[SerializeField] private float _activateDistance;
 		[SerializeField] private float _maxDelta = 5;
 
+		[Header("Rotating active gold")]
+		[SerializeField] private float _rotateSpeed = 20f;
+
 		private ListOfGoldModel _listOfGold;
 		private List<GoldModel> _goldList;
 		private GoldModel _currentGold;
@@ -52,6 +55,7 @@ namespace Vagonetka
 				if (Vector3.Distance(_currentGold.transform.position, _player.transform.position) <= _activateDistance)
 				{
 					_currentGold.Activate();
+					_currentGold.gameObject.transform.Rotate(Vector3.up, Time.deltaTime * _rotateSpeed);
 				}
 				if (Mathf.Abs(_goldX - _playerX) <= _maxDelta && Mathf.Abs(_goldZ - _playerZ) <= _maxDelta)
 				{
@@ -75,6 +79,10 @@ namespace Vagonetka
 			{
 				_currentGold = _goldList[_index];
 			}
+			else
+            {
+				_currentGold = null;
+            }
 		}
 
 		public GoldModel GetCurrentGold()
