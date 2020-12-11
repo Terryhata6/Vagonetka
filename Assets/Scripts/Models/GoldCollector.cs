@@ -9,7 +9,9 @@ namespace Vagonetka
 		public ParticleSystem[] GoldEffectParticles;
 		public Light GoldEffectLight;
 		public float GoldEffectRangeMax;
+		public int GoldCollectedBeforeInvisible;
 
+		private Collider[] _collectedGoldColliders;
 		private BalanceController _balanceModel;
 		private List<Transform> _goldTransformList;
 		[SerializeField] private int _goldCollected;
@@ -26,6 +28,7 @@ namespace Vagonetka
 				GoldEffectParticles[i].Pause();
 			}
 			GoldEffectLight.range = 0;
+			_collectedGoldColliders = new Collider[25];
 		}
 		public void AddGold()
 		{
@@ -38,6 +41,17 @@ namespace Vagonetka
 			if (_goldCollected >= _minAmountOfGold)
 			{
 				EnoughOfGoldCollected = true;
+			}
+			if(_goldCollected >= GoldCollectedBeforeInvisible)
+			{
+				TurnCollidersOff();
+			}
+		}
+		private void TurnCollidersOff()
+		{
+			for (int i = 0; i < _goldCollected - 2; i++)
+			{
+				_collectedGoldColliders[i].isTrigger = true;
 			}
 		}
 		private void ActivateLightEffect()
@@ -89,6 +103,7 @@ namespace Vagonetka
 		{
 			goldIngot.parent = transform;
 			_goldTransformList.Add(goldIngot);
+			_collectedGoldColliders[_goldCollected] = goldIngot.gameObject.GetComponent<Collider>();
 			goldModel.StopFalling(2f);
 		}
 		public void ClearCollector()

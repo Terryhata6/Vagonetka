@@ -22,8 +22,8 @@ namespace Vagonetka
             if(_goldCollector != null && !_isCollected)
             {
                 _isCollected = true;
-                _goldCollector.AddGold();
                 _goldCollector.PlaceGold(this.transform, this);
+                _goldCollector.AddGold();
             }
         }
 
