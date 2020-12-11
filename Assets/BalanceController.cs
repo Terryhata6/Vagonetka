@@ -16,7 +16,7 @@ namespace Vagonetka
 		{
 			for (int i = 0; i < BalancePreset._LVLSettings.Length; i++)
 			{
-				if(CurrentLvl >= BalancePreset._LVLSettings[i].MaxLvl)
+				if (CurrentLvl >= BalancePreset._LVLSettings[i].MaxLvl)
 				{
 					CurrentLvlPreset = i;
 					break;
