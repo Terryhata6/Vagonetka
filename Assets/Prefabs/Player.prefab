@@ -347,6 +347,7 @@ MonoBehaviour:
   GoldEffectParticles: []
   GoldEffectLight: {fileID: 3208921980770853341}
   GoldEffectRangeMax: 30
+  GoldCollectedBeforeInvisible: 5
   _goldCollected: 0
   _minAmountOfGold: 0
   _maxAmountOfGold: 0
