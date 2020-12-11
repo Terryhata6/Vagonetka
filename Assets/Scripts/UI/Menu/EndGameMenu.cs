@@ -21,10 +21,12 @@ namespace Vagonetka
 
 
         private UIController _uiController;
+        private GoldCollector _goldCollector;
 
         private void Start()
         {
             _uiController = GetComponentInParent<UIController>();
+            _goldCollector = FindObjectOfType<GoldCollector>();
 
             _buttonNext.GetControl.onClick.AddListener(() => _uiController.NextLevel());
             _buttonRestart.GetControl.onClick.AddListener(() => _uiController.ExitGame());
@@ -55,6 +57,8 @@ namespace Vagonetka
                     
                     _buttonRestart.gameObject.SetActive(false);
                     _imageLose.gameObject.SetActive(false);
+
+                    SetFinalScoreText();
                     break;
                 case EndGameUIState.Lose:
                     //TODO
@@ -63,8 +67,15 @@ namespace Vagonetka
 
                     _buttonNext.gameObject.SetActive(false);
                     _imageWin.gameObject.SetActive(false);
+
+                    SetFinalScoreText();
                     break;
             }
+        }
+
+        private void SetFinalScoreText()
+        {
+            _catchedGoldText.GetControl.text = $"{_goldCollector.GetGoldCollected()} / {_goldCollector.GetMinAmountOfGold()}";
         }
     }
 }
