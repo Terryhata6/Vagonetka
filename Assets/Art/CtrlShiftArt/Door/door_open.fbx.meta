@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: -5929121477866303451
     second: door_open
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn12
+    second: {fileID: 2100000, guid: 13791c8a109622a4faceb4a0971ec3d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn14
+    second: {fileID: 2100000, guid: ebea9981b5ab3a845a4cc2905ee60a2c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
