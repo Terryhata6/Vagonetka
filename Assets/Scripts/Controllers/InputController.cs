@@ -49,8 +49,11 @@ namespace Vagonetka
 
         private void FallGold()
         {
-            _goldController.GetCurrentGold().Fall();
-            _goldController.SwitchNextGold();
+            if (_goldController.GetCurrentGold())
+            {
+                _goldController.GetCurrentGold().Fall();
+                _goldController.SwitchNextGold();
+            }
         }
 
         public void ActivateController(bool state)

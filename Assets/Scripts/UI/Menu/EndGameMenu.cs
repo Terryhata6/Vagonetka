@@ -7,15 +7,18 @@ namespace Vagonetka
     {
         [Header("Main panel of end game menu")]
         [SerializeField] private GameObject _mainPanel;
+        
+        [Header("Objects for all cases")]
+        [SerializeField] private TextUI _catchedGoldText;
 
         [Header("Objects in case of WIN")]
         [SerializeField] private ButtonUI _buttonNext;
+        [SerializeField] private ImageUI _imageWin;
 
-        //[Header("Objects in case of LOSE")]
+        [Header("Objects in case of LOSE")]
+        [SerializeField] private ButtonUI _buttonRestart;
+        [SerializeField] private ImageUI _imageLose;
 
-        [Header("Objects for all cases")]
-        [SerializeField] private TextUI _header;
-        [SerializeField] private ButtonUI _buttonExit;
 
         private UIController _uiController;
 
@@ -23,8 +26,8 @@ namespace Vagonetka
         {
             _uiController = GetComponentInParent<UIController>();
 
-            _buttonExit.GetControl.onClick.AddListener(() => _uiController.ExitGame());
             _buttonNext.GetControl.onClick.AddListener(() => _uiController.NextLevel());
+            _buttonRestart.GetControl.onClick.AddListener(() => _uiController.ExitGame());
         }
 
         public override void Hide()
@@ -47,12 +50,19 @@ namespace Vagonetka
             {
                 case EndGameUIState.Win:
                     //TODO
-                    _header.GetControl.text = "You WIN!";
+                    _buttonNext.gameObject.SetActive(true);
+                    _imageWin.gameObject.SetActive(true);
+                    
+                    _buttonRestart.gameObject.SetActive(false);
+                    _imageLose.gameObject.SetActive(false);
                     break;
                 case EndGameUIState.Lose:
                     //TODO
+                    _buttonRestart.gameObject.SetActive(true);
+                    _imageLose.gameObject.SetActive(true);
+
                     _buttonNext.gameObject.SetActive(false);
-                    _header.GetControl.text = "Loser";
+                    _imageWin.gameObject.SetActive(false);
                     break;
             }
         }
