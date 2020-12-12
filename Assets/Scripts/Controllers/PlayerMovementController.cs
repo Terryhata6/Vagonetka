@@ -6,7 +6,7 @@ namespace Vagonetka
     {
         [Header("Player speed")]
         [SerializeField] private float _speed;
-        
+
         private float _rotateSpeed;
         private float _startYAngle;
         private float _currentYAngle;
@@ -39,6 +39,7 @@ namespace Vagonetka
         private void Move()
         {
             _player.transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+            _player.Erondondon(_speed);
         }
 
         private void Rotate(float direction, float angle)
