@@ -9,19 +9,17 @@ namespace Vagonetka
         public bool IsRotateRight;
         public bool IsRotateLeft;
 
+        [SerializeField] private GameObject _rightFrontWheel;
+        [SerializeField] private GameObject _rightBackWheel;
+        [SerializeField] private GameObject _leftFrontWheel;
+        [SerializeField] private GameObject _leftBackWheel;
+
         private float _increaseNum = 0.1f;
         private float _tempXCoordinat;
         private float _tempZCoordinat;
 
-        //old
-        /*public void AlignByX(float xCoordinate)
-        {
-            transform.position = new Vector3(xCoordinate, transform.position.y, transform.position.z);
-        }
-        public void AlignByZ(float zCoordinate)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zCoordinate);
-        }*/
+        private float _speedMultiplier = 20f;
+
 
         public void StartLevel()
         {
@@ -104,6 +102,15 @@ namespace Vagonetka
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, _tempZCoordinat);
             }
+        }
+
+        public void Erondondon(float speed)
+        {
+            if (!_rightFrontWheel || !_rightBackWheel || !_leftFrontWheel || !_leftBackWheel) return;
+            _rightFrontWheel.transform.Rotate(Vector3.up * Time.deltaTime * speed * _speedMultiplier);
+            _rightBackWheel.transform.Rotate(Vector3.up * Time.deltaTime * speed * _speedMultiplier);
+            _leftFrontWheel.transform.Rotate(Vector3.up * Time.deltaTime * speed * -_speedMultiplier);
+            _leftBackWheel.transform.Rotate(Vector3.up * Time.deltaTime * speed * -_speedMultiplier);
         }
     }
 }

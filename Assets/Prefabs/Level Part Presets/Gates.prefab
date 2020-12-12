@@ -2523,11 +2523,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5247247121237712066, guid: 2291e5787942d2e41865e7348983c602,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5247247121237712069, guid: 2291e5787942d2e41865e7348983c602,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5397,11 +5392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Doors 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5247247121237712066, guid: 2291e5787942d2e41865e7348983c602,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5247247121237712069, guid: 2291e5787942d2e41865e7348983c602,
         type: 3}
