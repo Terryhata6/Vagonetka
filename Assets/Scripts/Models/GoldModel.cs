@@ -66,5 +66,10 @@ namespace Vagonetka
             if (_isCollected) return;
             Destroy(gameObject);
         }
+
+        public bool IsActive()
+        {
+            return _isActive;
+        }
     }
 }

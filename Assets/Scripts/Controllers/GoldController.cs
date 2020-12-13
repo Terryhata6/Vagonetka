@@ -74,6 +74,8 @@ namespace Vagonetka
 
 		public void SwitchNextGold()
 		{
+			if (!_currentGold.IsActive()) return;
+
 			_index++;
 			if (_index < _goldList.Count)
 			{
