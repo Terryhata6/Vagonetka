@@ -11,13 +11,14 @@ namespace Vagonetka
 		public float GoldEffectRangeMax;
 		public int GoldCollectedBeforeInvisible;
 
-		private Collider[] _collectedGoldColliders;
-		private BalanceController _balanceModel;
-		private List<Transform> _goldTransformList;
 		[SerializeField] private int _goldCollected;
 		[SerializeField] private int _minAmountOfGold;
 		[SerializeField] private int _maxAmountOfGold;
 		[SerializeField] private bool EnoughOfGoldCollected;
+
+		private Collider[] _collectedGoldColliders;
+		private BalanceController _balanceModel;
+		private List<Transform> _goldTransformList;
 
 		private void Awake()
 		{ 
@@ -121,6 +122,9 @@ namespace Vagonetka
 		{
 			return _minAmountOfGold;
 		}
-		//private void 
+		public int GetMaxAmountOfGold()
+        {
+			return _maxAmountOfGold;
+        }
 	}
 }

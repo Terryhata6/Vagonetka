@@ -10,6 +10,7 @@ namespace Vagonetka
         
         [Header("Objects for all cases")]
         [SerializeField] private TextUI _catchedGoldText;
+        [SerializeField] private TextUI _goalText;
 
         [Header("Objects in case of WIN")]
         [SerializeField] private ButtonUI _buttonNext;
@@ -75,7 +76,8 @@ namespace Vagonetka
 
         private void SetFinalScoreText()
         {
-            _catchedGoldText.GetControl.text = $"{_goldCollector.GetGoldCollected()} / {_goldCollector.GetMinAmountOfGold()}";
+            _goalText.GetControl.text = $"GOAL: {_goldCollector.GetMinAmountOfGold()}";
+            _catchedGoldText.GetControl.text = $"{_goldCollector.GetGoldCollected()} / {_goldCollector.GetMaxAmountOfGold()}";
         }
     }
 }
