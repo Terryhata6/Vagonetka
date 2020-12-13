@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using TapticPlugin;
 
 namespace Vagonetka
 {
@@ -14,11 +14,13 @@ namespace Vagonetka
         private bool _isActive;
 
         private GoldController _goldController;
+        private SampleUI _sampleUI;
 
         private void Start()
         {
             _goldController = FindObjectOfType<GoldController>();
             _сameraForInput = FindObjectOfType<Camera>();
+            _sampleUI = FindObjectOfType<SampleUI>();
         }
 
         private void Update()
@@ -29,6 +31,7 @@ namespace Vagonetka
             if (Input.GetKeyDown(_keyForFallGold))
             {
                 FallGold();
+                _sampleUI.OnImpactClick(2);
             }
 #endif
 
@@ -38,6 +41,7 @@ namespace Vagonetka
                 if (touch.phase == TouchPhase.Began)
                 {
                     InputStarted = true;
+                    _sampleUI.OnImpactClick(2);
                     FallGold();
                 }
             }
