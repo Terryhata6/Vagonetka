@@ -16,8 +16,7 @@ public class WinPanelEffects : MonoBehaviour
     private void ActivateSingleStar()
     {
         StarsAnimators[_starNum].SetTrigger("PopUp");
-        StarsAnimators[_starNum].GetComponentInChildren<ParticleSystem>().Stop();
-        StarsAnimators[_starNum].GetComponentInChildren<ParticleSystem>().Play();
+        //StarsAnimators[_starNum].gameObject.GetComponentInChildren<ParticleSystem>().Play(); не всё так просто :(
         _starNum++;
     }
 }
