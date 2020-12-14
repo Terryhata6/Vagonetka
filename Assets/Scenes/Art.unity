@@ -4113,6 +4113,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2707248336606507755, guid: c68910c4436d0004c8ab7981a0c37133,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764912295137635479, guid: c68910c4436d0004c8ab7981a0c37133,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5103847950123786427, guid: c68910c4436d0004c8ab7981a0c37133,
         type: 3}
       propertyPath: m_AnchorMax.y

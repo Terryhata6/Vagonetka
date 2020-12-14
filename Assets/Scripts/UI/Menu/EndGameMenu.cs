@@ -55,7 +55,7 @@ namespace Vagonetka
             switch(state)
             {
                 case EndGameUIState.Win:
-                    //TODO
+
                     _buttonNext.gameObject.SetActive(true);
                     _imageWin.gameObject.SetActive(true);
                     
@@ -66,7 +66,7 @@ namespace Vagonetka
                     SetFinalScoreText();
                     break;
                 case EndGameUIState.Lose:
-                    //TODO
+
                     _buttonRestart.gameObject.SetActive(true);
                     _imageLose.gameObject.SetActive(true);
 
