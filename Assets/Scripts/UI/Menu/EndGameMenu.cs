@@ -62,7 +62,7 @@ namespace Vagonetka
                     _buttonRestart.gameObject.SetActive(false);
                     _imageLose.gameObject.SetActive(false);
 
-                    _winEffects.ActivateStars(0.5f, 3);
+                    _winEffects.ActivateStars(0.5f, HowMuchStars());
                     SetFinalScoreText();
                     break;
                 case EndGameUIState.Lose:
@@ -82,6 +82,22 @@ namespace Vagonetka
         {
             _goalText.GetControl.text = $"GOAL: {_goldCollector.GetMinAmountOfGold()}";
             _catchedGoldText.GetControl.text = $"{_goldCollector.GetGoldCollected()} / {_goldCollector.GetMaxAmountOfGold()}";
+        }
+
+        private int HowMuchStars()
+        {
+            if (_goldCollector.GetGoldCollected() == _goldCollector.GetMaxAmountOfGold())
+            {
+                return 3;
+            }
+            else if (_goldCollector.GetGoldCollected() >= (_goldCollector.GetMaxAmountOfGold() * 0.75f))
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }
