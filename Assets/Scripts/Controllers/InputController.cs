@@ -31,7 +31,6 @@ namespace Vagonetka
             if (Input.GetKeyDown(_keyForFallGold))
             {
                 FallGold();
-                _sampleUI.OnImpactClick(2);
             }
 #endif
 
@@ -41,7 +40,6 @@ namespace Vagonetka
                 if (touch.phase == TouchPhase.Began)
                 {
                     InputStarted = true;
-                    _sampleUI.OnImpactClick(2);
                     FallGold();
                 }
             }
@@ -55,6 +53,7 @@ namespace Vagonetka
         {
             if (_goldController.GetCurrentGold())
             {
+                //_sampleUI.OnImpactClick(2);
                 _goldController.GetCurrentGold().Fall();
                 _goldController.SwitchNextGold();
             }

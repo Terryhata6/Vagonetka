@@ -3560,6 +3560,11 @@ PrefabInstance:
       propertyPath: GoldEffectParticles.Array.data[1]
       value: 
       objectReference: {fileID: 28156362}
+    - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
+        type: 3}
+      propertyPath: _goldCollected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8616405447311211607, guid: 239a4bfde898c984f8be0325b828a369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3838,6 +3843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BalancePreset: {fileID: 11400000, guid: 5fb7b727249e38b479dfcc24b09323fc, type: 2}
+  CurrentLvlPreset: 0
+  CurrentLvl: 0
 --- !u!114 &2066622654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3956,6 +3963,7 @@ MonoBehaviour:
   - {fileID: 1819687832}
   - {fileID: 193290993}
   - {fileID: 140436891}
+  _starNum: 0
 --- !u!1001 &988429544868077181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4117,6 +4125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.type
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707248336606507755, guid: c68910c4436d0004c8ab7981a0c37133,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 2764912295137635479, guid: c68910c4436d0004c8ab7981a0c37133,
         type: 3}
