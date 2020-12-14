@@ -23,6 +23,7 @@ namespace Vagonetka
 
         private UIController _uiController;
         private GoldCollector _goldCollector;
+        private WinPanelEffects _winEffects;
 
         private void Start()
         {
@@ -31,6 +32,8 @@ namespace Vagonetka
 
             _buttonNext.GetControl.onClick.AddListener(() => _uiController.NextLevel());
             _buttonRestart.GetControl.onClick.AddListener(() => _uiController.ExitGame());
+
+            _winEffects = FindObjectOfType<WinPanelEffects>();
         }
 
         public override void Hide()
@@ -59,6 +62,7 @@ namespace Vagonetka
                     _buttonRestart.gameObject.SetActive(false);
                     _imageLose.gameObject.SetActive(false);
 
+                    _winEffects.ActivateStars(0.5f, 3);
                     SetFinalScoreText();
                     break;
                 case EndGameUIState.Lose:
