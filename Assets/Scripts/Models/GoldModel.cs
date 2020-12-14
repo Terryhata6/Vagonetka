@@ -7,15 +7,11 @@ namespace Vagonetka
     {
         private Rigidbody _rigidbody;
         private GoldCollector _goldCollector;
+        private float _timeToDestroy = 3f;
         private bool _isActive;
         private bool _isCollected;
 
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            //TODO
-            //Destroy(gameObject);
-        }
         private void OnTriggerEnter(Collider other)
         {
             _goldCollector = other.gameObject.GetComponent<GoldCollector>();
@@ -43,6 +39,8 @@ namespace Vagonetka
         {
             if (!_isActive) return;
             _rigidbody.isKinematic = false;
+
+            Invoke("MayBeDestroy", _timeToDestroy);
         }
         public void StopFalling(float time) 
         {
@@ -61,6 +59,17 @@ namespace Vagonetka
         public void SetMass(float mass)
         {
             _rigidbody.mass = mass;
+        }
+
+        private void MayBeDestroy()
+        {
+            if (_isCollected) return;
+            Destroy(gameObject);
+        }
+
+        public bool IsActive()
+        {
+            return _isActive;
         }
     }
 }
