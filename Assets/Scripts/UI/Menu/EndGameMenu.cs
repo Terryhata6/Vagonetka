@@ -90,7 +90,7 @@ namespace Vagonetka
             {
                 return 3;
             }
-            else if (_goldCollector.GetGoldCollected() >= (_goldCollector.GetMaxAmountOfGold() * 0.75f))
+            else if (_goldCollector.GetGoldCollected() >= (_goldCollector.GetMaxAmountOfGold() * 0.6f))
             {
                 return 2;
             }
