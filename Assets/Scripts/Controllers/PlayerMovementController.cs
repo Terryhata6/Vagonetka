@@ -7,6 +7,7 @@ namespace Vagonetka
         [Header("Player speed")]
         [SerializeField] private float _speed;
 
+        private BalanceController _balanceController;
         private float _rotateSpeed;
         private float _startYAngle;
         private float _currentYAngle;
@@ -17,7 +18,9 @@ namespace Vagonetka
         private void Start()
         {
             _player = FindObjectOfType<PlayerModel>();
+            _balanceController = FindObjectOfType<BalanceController>();
             _rotateSpeed = _speed * 23.8f / 10f;
+            _speed = GetSpeed();
         }
 
         private void FixedUpdate()
@@ -92,6 +95,13 @@ namespace Vagonetka
         {
             _startYAngle = 0;
             _currentYAngle = 0;
+            _balanceController.AddLvl();
+            _speed = GetSpeed(); 
+            _rotateSpeed = _speed * 23.8f / 10f;
+        }
+        private float GetSpeed()
+        {
+            return _balanceController.CountSpeed();
         }
     }
 }

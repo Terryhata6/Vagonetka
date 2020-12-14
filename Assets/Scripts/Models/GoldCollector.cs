@@ -1,5 +1,5 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TapticPlugin;
 using UnityEngine;
 
 namespace Vagonetka
@@ -17,12 +17,10 @@ namespace Vagonetka
 		[SerializeField] private bool EnoughOfGoldCollected;
 
 		private Collider[] _collectedGoldColliders;
-		private BalanceController _balanceModel;
 		private List<Transform> _goldTransformList;
 
 		private void Awake()
-		{ 
-			_balanceModel = FindObjectOfType<BalanceController>();
+		{
 			_goldTransformList = new List<Transform>();
 			for (int i = 0; i < GoldEffectParticles.Length; i++)
 			{
@@ -33,17 +31,18 @@ namespace Vagonetka
 		}
 		public void AddGold()
 		{
+			TapticManager.Notification(NotificationFeedback.Success);
 			_goldCollected++;
 			for (int i = 0; i < GoldEffectParticles.Length; i++)
 			{
-				GoldEffectParticles[i]. Play();
+				GoldEffectParticles[i].Play();
 			}
 			ActivateLightEffect();
 			if (_goldCollected >= _minAmountOfGold)
 			{
 				EnoughOfGoldCollected = true;
 			}
-			if(_goldCollected >= GoldCollectedBeforeInvisible)
+			if (_goldCollected >= GoldCollectedBeforeInvisible)
 			{
 				TurnCollidersOff();
 			}
@@ -76,21 +75,23 @@ namespace Vagonetka
 		}
 		public void UpdateGoldNums(int AmountOfGoldOnScene)
 		{
-			_maxAmountOfGold = AmountOfGoldOnScene; 
+			_maxAmountOfGold = AmountOfGoldOnScene;
 			EnoughOfGoldCollected = false;
-			_minAmountOfGold = _maxAmountOfGold - _balanceModel.GetMaxAmountOfMissedGold();
+			_minAmountOfGold = _maxAmountOfGold / 2;
+			Debug.Log("_minAmountOfGold = " + _minAmountOfGold);
 			_goldCollected = 0;
 
 			GoldModel[] goldInChildren = GetComponentsInChildren<GoldModel>();
-			foreach(GoldModel gold in goldInChildren)
-            {
+			foreach (GoldModel gold in goldInChildren)
+			{
 				Destroy(gold.gameObject);
-            }
+			}
 
 			_goldTransformList.Clear();
 		}
 		public bool IsEnoughGoldCollected()
 		{
+			Debug.Log("EnoughOfGoldCollected = " + EnoughOfGoldCollected);
 			if (EnoughOfGoldCollected)
 			{
 				return true;
@@ -100,7 +101,7 @@ namespace Vagonetka
 				return false;
 			}
 		}
-		public void PlaceGold(Transform goldIngot , GoldModel goldModel)
+		public void PlaceGold(Transform goldIngot, GoldModel goldModel)
 		{
 			goldIngot.parent = transform;
 			_goldTransformList.Add(goldIngot);
@@ -123,8 +124,8 @@ namespace Vagonetka
 			return _minAmountOfGold;
 		}
 		public int GetMaxAmountOfGold()
-        {
+		{
 			return _maxAmountOfGold;
-        }
+		}
 	}
 }

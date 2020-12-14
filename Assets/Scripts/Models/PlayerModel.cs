@@ -33,7 +33,6 @@ namespace Vagonetka
             _tempZCoordinat = zCoordinate;
             if (zCoordinate > transform.position.z)
             {
-                Debug.Log(zCoordinate - transform.position.z);
                 int num = (int)((zCoordinate - transform.position.z) / _increaseNum) + 1;
                 for (int i = 0; i < num; i++)
                 {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TapticPlugin;
 
 
 namespace Vagonetka
@@ -40,6 +41,7 @@ namespace Vagonetka
             if (!_isActive) return;
             _rigidbody.isKinematic = false;
 
+            FindObjectOfType<SampleUI>().OnImpactClick(0);
             Invoke("MayBeDestroy", _timeToDestroy);
         }
         public void StopFalling(float time) 

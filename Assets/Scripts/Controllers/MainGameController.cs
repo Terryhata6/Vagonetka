@@ -12,6 +12,7 @@ namespace Vagonetka
         private InputController _inputController;
         private SaveDataRepo _saveData;
         private UIController _uiController;
+        private BalanceController _balanceController;
 
         private void Start()
         {
@@ -21,8 +22,9 @@ namespace Vagonetka
             _levelController = FindObjectOfType<LevelController>();
             _inputController = FindObjectOfType<InputController>();
             _uiController = FindObjectOfType<UIController>();
+            _balanceController = FindObjectOfType<BalanceController>();
 
-            _saveData = new SaveDataRepo();
+             _saveData = new SaveDataRepo();
         }
 
         public void StartGame()
@@ -47,6 +49,7 @@ namespace Vagonetka
             }
             else
             {
+                _balanceController.ZeroiseLvl();
                 _uiController.EndGame(EndGameUIState.Lose);
             }
         }

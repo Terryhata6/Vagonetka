@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: BalancePeset
   m_EditorClassIdentifier: 
   _LVLSettings:
-  - MinLvl: 1
-    MaxLvl: 5
+  - MinLvl: 0
+    MaxLvl: 1
     LevelSettings:
-      CartSpeed: 5
+      CartSpeed: 25
       MaxAmountOfMissedGold: 5
-  - MinLvl: 6
-    MaxLvl: 10
+  - MinLvl: 1
+    MaxLvl: 2
     LevelSettings:
-      CartSpeed: 6
+      CartSpeed: 30
       MaxAmountOfMissedGold: 0
-  - MinLvl: 0
-    MaxLvl: 0
+  - MinLvl: 2
+    MaxLvl: 3
     LevelSettings:
-      CartSpeed: 0
+      CartSpeed: 35
       MaxAmountOfMissedGold: 0
-  - MinLvl: 0
-    MaxLvl: 0
+  - MinLvl: 3
+    MaxLvl: 4
     LevelSettings:
-      CartSpeed: 0
+      CartSpeed: 40
       MaxAmountOfMissedGold: 0
-  - MinLvl: 0
-    MaxLvl: 0
+  - MinLvl: 4
+    MaxLvl: 4000
     LevelSettings:
-      CartSpeed: 0
+      CartSpeed: 45
       MaxAmountOfMissedGold: 0
