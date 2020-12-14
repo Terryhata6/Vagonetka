@@ -7,15 +7,29 @@ namespace Vagonetka
     {
         [Header("Main panel of In Game UI")]
         [SerializeField] private GameObject _mainPanel;
+
+        [Header("Button pause")]
         [SerializeField] private ButtonUI _buttonPause;
 
+        [Header("Slider")]
+        [SerializeField] private SliderUI _slider;
+
         private UIController _uiController;
+        private GoldCollector _goldCollector;
 
         private void Start()
         {
             _uiController = GetComponentInParent<UIController>();
 
             _buttonPause.GetControl.onClick.AddListener(() => _uiController.PauseGame());
+
+            _goldCollector = FindObjectOfType<GoldCollector>();
+        }
+
+        private void Update()
+        {
+            _slider.GetControl.maxValue = _goldCollector.GetMaxAmountOfGold();
+            _slider.GetControl.value = _goldCollector.GetGoldCollected();
         }
 
         public override void Hide()
