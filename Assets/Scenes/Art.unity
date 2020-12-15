@@ -4129,7 +4129,7 @@ PrefabInstance:
     - target: {fileID: 2707248336606507755, guid: c68910c4436d0004c8ab7981a0c37133,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2764912295137635479, guid: c68910c4436d0004c8ab7981a0c37133,
         type: 3}

@@ -41,7 +41,7 @@ namespace Vagonetka
 
         private void Move()
         {
-            _player.transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+            _player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * _speed);
             _player.Erondondon(_speed);
         }
 
@@ -49,7 +49,7 @@ namespace Vagonetka
         {
             _currentYAngle = _player.transform.rotation.eulerAngles.y;
 
-            _player.transform.Rotate(Vector3.up * Time.deltaTime * (_rotateSpeed * direction));
+            _player.transform.Rotate(Vector3.up * Time.fixedDeltaTime * (_rotateSpeed * direction));
 
             if (direction == 1)
             {
