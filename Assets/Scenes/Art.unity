@@ -187,12 +187,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &28156362 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5843357868648623901, guid: 239a4bfde898c984f8be0325b828a369,
-    type: 3}
-  m_PrefabInstance: {fileID: 2044824533}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &71079488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2723,12 +2717,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a48e9ba57ff9ee14f85a35d3a6225b9e, type: 3}
---- !u!198 &1580375787 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2947617685605502659, guid: 239a4bfde898c984f8be0325b828a369,
-    type: 3}
-  m_PrefabInstance: {fileID: 2044824533}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1617810635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,21 +3533,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c49380c93ba9bce4f8b460c975ce7b47, type: 2}
-    - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
-        type: 3}
-      propertyPath: GoldEffectParticles.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
-        type: 3}
-      propertyPath: GoldEffectParticles.Array.data[0]
-      value: 
-      objectReference: {fileID: 1580375787}
-    - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
-        type: 3}
-      propertyPath: GoldEffectParticles.Array.data[1]
-      value: 
-      objectReference: {fileID: 28156362}
     - target: {fileID: 6325508259103715027, guid: 239a4bfde898c984f8be0325b828a369,
         type: 3}
       propertyPath: _goldCollected

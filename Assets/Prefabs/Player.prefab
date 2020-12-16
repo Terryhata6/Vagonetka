@@ -348,7 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c631421345fcc24981da860e9aef3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoldEffectParticles: []
+  GoldEffectParticles:
+  - {fileID: 2947617685605502659}
   GoldEffectLight: {fileID: 3208921980770853341}
   GoldEffectRangeMax: 30
   GoldCollectedBeforeInvisible: 5
@@ -908,6 +909,12 @@ PrefabInstance:
 --- !u!4 &2947617685605502658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6754102235138699942, guid: 4f711c34187fd0144bc4c2c5f6f30422,
+    type: 3}
+  m_PrefabInstance: {fileID: 8454222525863427172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2947617685605502659 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6754102235138699943, guid: 4f711c34187fd0144bc4c2c5f6f30422,
     type: 3}
   m_PrefabInstance: {fileID: 8454222525863427172}
   m_PrefabAsset: {fileID: 0}
