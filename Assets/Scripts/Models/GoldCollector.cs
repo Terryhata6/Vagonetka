@@ -18,6 +18,7 @@ namespace Vagonetka
 
 		private Collider[] _collectedGoldColliders;
 		private List<Transform> _goldTransformList;
+		private SampleUI _taptic;
 
 		private void Awake()
 		{
@@ -28,10 +29,12 @@ namespace Vagonetka
 			}
 			GoldEffectLight.range = 0;
 			_collectedGoldColliders = new Collider[25];
+
+			_taptic = FindObjectOfType<SampleUI>();
 		}
 		public void AddGold()
 		{
-			TapticManager.Notification(NotificationFeedback.Success);
+			_taptic.OnImpactClick(2);
 			_goldCollected++;
 			for (int i = 0; i < GoldEffectParticles.Length; i++)
 			{
