@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 
+  - 7442fd87c1eb9f75925f2684ad3fa457
   appIds:
-  - 0
+  - 715452209353683
   appLabels:
-  - App Name
+  - 'Catch the Gold '
   cookie: 1
   logging: 1
   status: 1
