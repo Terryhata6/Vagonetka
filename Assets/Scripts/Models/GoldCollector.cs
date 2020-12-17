@@ -8,6 +8,7 @@ namespace Vagonetka
 	{
 		public ParticleSystem[] GoldEffectParticles;
 		public Light GoldEffectLight;
+		public AudioSource AudioSourcePickUpCoin;
 		public float GoldEffectRangeMax;
 		public int GoldCollectedBeforeInvisible;
 
@@ -34,13 +35,16 @@ namespace Vagonetka
 		}
 		public void AddGold()
 		{
+			ActivateLightEffect();
+			AudioSourcePickUpCoin.PlayOneShot(AudioSourcePickUpCoin.clip);
+
+
 			_taptic.OnImpactClick(2);
 			_goldCollected++;
 			for (int i = 0; i < GoldEffectParticles.Length; i++)
 			{
 				GoldEffectParticles[i].Play();
 			}
-			ActivateLightEffect();
 			if (_goldCollected >= _minAmountOfGold)
 			{
 				EnoughOfGoldCollected = true;
@@ -54,6 +58,7 @@ namespace Vagonetka
 		{
 			for (int i = 0; i < _goldCollected - 2; i++)
 			{
+				_collectedGoldColliders[i].gameObject.GetComponent<GoldModel>().StopFalling(0f);
 				_collectedGoldColliders[i].isTrigger = true;
 			}
 		}
