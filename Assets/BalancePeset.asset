@@ -16,25 +16,35 @@ MonoBehaviour:
   - MinLvl: 0
     MaxLvl: 1
     LevelSettings:
-      CartSpeed: 25
+      CartSpeed: 19
       MaxAmountOfMissedGold: 5
   - MinLvl: 1
     MaxLvl: 2
     LevelSettings:
-      CartSpeed: 30
+      CartSpeed: 22
       MaxAmountOfMissedGold: 0
   - MinLvl: 2
     MaxLvl: 3
     LevelSettings:
-      CartSpeed: 35
+      CartSpeed: 25
       MaxAmountOfMissedGold: 0
   - MinLvl: 3
     MaxLvl: 4
     LevelSettings:
-      CartSpeed: 40
+      CartSpeed: 28
       MaxAmountOfMissedGold: 0
   - MinLvl: 4
-    MaxLvl: 4000
+    MaxLvl: 5
     LevelSettings:
-      CartSpeed: 45
+      CartSpeed: 31
+      MaxAmountOfMissedGold: 0
+  - MinLvl: 4
+    MaxLvl: 6
+    LevelSettings:
+      CartSpeed: 35
+      MaxAmountOfMissedGold: 0
+  - MinLvl: 4
+    MaxLvl: 40000
+    LevelSettings:
+      CartSpeed: 40
       MaxAmountOfMissedGold: 0

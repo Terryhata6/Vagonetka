@@ -3991,9 +3991,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StarsAnimators:
+  - {fileID: 140436891}
   - {fileID: 1819687832}
   - {fileID: 193290993}
-  - {fileID: 140436891}
   _starNum: 0
 --- !u!114 &2066622662
 MonoBehaviour:
