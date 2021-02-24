@@ -26,6 +26,11 @@ namespace Vagonetka
 
 		private bool _isActive;
 
+		public float ActivateDistance
+		{
+			get => _activateDistance;
+		}
+
 		private void Start()
 		{
 			_player = FindObjectOfType<PlayerModel>();
@@ -55,7 +60,8 @@ namespace Vagonetka
 				if (Vector3.Distance(_currentGold.transform.position, _player.transform.position) <= _activateDistance)
 				{
 					_currentGold.Activate();
-					_currentGold.gameObject.transform.Rotate(Vector3.up, Time.deltaTime * _rotateSpeed);
+					_currentGold.RotatingObject.transform.Rotate(Vector3.up, Time.deltaTime * _rotateSpeed);
+
 				}
 				if (Mathf.Abs(_goldX - _playerX) <= _maxDelta && Mathf.Abs(_goldZ - _playerZ) <= _maxDelta)
 				{
@@ -75,7 +81,7 @@ namespace Vagonetka
 		public void SwitchNextGold()
 		{
 			if (!_currentGold.IsActive()) return;
-
+			_currentGold.DeactivateCircle();
 			_index++;
 			if (_index < _goldList.Count)
 			{
